@@ -1,2 +1,4 @@
 node_modules
 server/views/*
+../node_modules
+../public

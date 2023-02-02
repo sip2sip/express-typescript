@@ -33,10 +33,10 @@ app.use(cookieParser());
 // app.use("/", express.static(path.join(__dirname, "/views")));
 
 // React asetukset
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../server/views")));
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../build", "index.html"));
+  res.sendFile(path.join(__dirname, "../server/views", "index.html"));
 });
 
 // routet

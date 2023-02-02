@@ -2,11 +2,12 @@
   "name": "express-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "rimraf dist && npx tsc",
     "start": "node dist/app.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\"",
+    "postbuild": "npm --prefix ./.. run build-react"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "rimraf": "^4.1.2"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
@@ -22,6 +24,7 @@
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.11.18",
     "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.20",
     "typescript": "^4.9.5"
   }

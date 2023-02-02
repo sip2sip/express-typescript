@@ -34,9 +34,9 @@ app.use((0, cookie_parser_1.default)());
 // app.use("/api", express.static(path.join(__dirname, "/public")));
 // app.use("/", express.static(path.join(__dirname, "/views")));
 // React asetukset
-app.use(express_1.default.static(path_1.default.join(__dirname, "../build")));
+app.use(express_1.default.static(path_1.default.join(__dirname, "../server/views")));
 app.get("/*", function (req, res) {
-    res.sendFile(path_1.default.join(__dirname, "../build", "index.html"));
+    res.sendFile(path_1.default.join(__dirname, "../server/views", "index.html"));
 });
 // routet
 app.use("/check", root_1.default);
